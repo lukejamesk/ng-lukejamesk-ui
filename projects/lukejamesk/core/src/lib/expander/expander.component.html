@@ -1,0 +1,6 @@
+<div class="ljk-expander">
+  <ng-content select="ljk-expander-header"></ng-content>
+  <div [attr.aria-labelledby]="ariaLabelId">
+    <ng-content *ngIf="open"></ng-content>
+  </div>
+</div>

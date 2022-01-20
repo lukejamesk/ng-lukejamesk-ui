@@ -1,0 +1,15 @@
+.button {
+  @apply
+    py-xs
+    px-s
+    border
+    border-transparent
+    shadow-sm
+    font-medium
+    text-primary-contrast-high
+    bg-primary-default;
+}
+
+.button:hover {
+  @apply bg-primary-contrast-low;
+}

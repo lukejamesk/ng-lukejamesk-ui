@@ -1,0 +1,534 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-92dc1edd4c1056d58793b70a41da904dd9480ba0131d900d554e9ef6e0a128da60b121f85f514092f1d9cdb045cfe53dd1ba62f648dbbe0d22979085dde9dc04",
+            "file": "projects/lukejamesk/core/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-button",
+            "styleUrls": [
+                "./button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ljk-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css'],\n})\nexport class ButtonComponent  {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\n",
+                    "styleUrl": "./button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button>\n  <ng-content></ng-content>\n</button>\n"
+        },
+        {
+            "name": "ExpanderBodyComponent",
+            "id": "component-ExpanderBodyComponent-a4773cf3be8d7691dcc12221020f8bde2c0fa5b16e71f9ecbd45a96677749cf5de1dcd8ba1687e80792d6c3cf8fae887415072e8d1ec019c3ab0313966781cce",
+            "file": "projects/lukejamesk/core/src/lib/expander-body/expander-body.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lk-expander-body",
+            "styleUrls": [
+                "./expander-body.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expander-body.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lk-expander-body',\n  templateUrl: './expander-body.component.html',\n  styleUrls: ['./expander-body.component.css'],\n})\nexport class ExpanderBodyComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./expander-body.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "ExpanderComponent",
+            "id": "component-ExpanderComponent-125ad98b02288843ef5a56dbecc67bacdf68d3d0bbd4d45c889232e3ce2b107a9a2fe9f18fbbaf757433084a173f8a7585e7dbdf4e15a69b250022970e3643f0",
+            "file": "projects/lukejamesk/core/src/lib/expander/expander.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lk-expander",
+            "styleUrls": [
+                "./expander.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expander.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "open",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "openChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "EventEmitter<boolean>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lk-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.css'],\n})\nexport class ExpanderComponent implements OnInit {\n  @Input() open: boolean = false;\n  @Input() id: string = '';\n  @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();\n\n  get ariaLabelId() {\n    return `Expander-${this.id}`;\n  }\n\n  constructor() {\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./expander.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "ariaLabelId": {
+                    "name": "ariaLabelId",
+                    "getSignature": {
+                        "name": "ariaLabelId",
+                        "type": "",
+                        "returnType": "",
+                        "line": 13
+                    }
+                }
+            },
+            "templateData": "<div>\n  <ng-content select=\"lk-expander-header\"></ng-content>\n  <div [attr.aria-labelledby]=\"ariaLabelId\">\n    <ng-content *ngIf=\"open\"></ng-content>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ExpanderHeaderComponent",
+            "id": "component-ExpanderHeaderComponent-7cf52d2e8efadf1578ea2d5eb301aa98fc081984814d908d0b7be76d9aa94f108aa9a6653c491c8ab06a2088644907f32a14364fee10de895ce43873d052e082",
+            "file": "projects/lukejamesk/core/src/lib/expander-header/expander-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lk-expander-header",
+            "styleUrls": [
+                "./expander-header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expander-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "expander",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ExpanderComponent",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "decorators": [
+                        {
+                            "name": "Host",
+                            "stringifiedArguments": ""
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doToggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Host, OnInit } from '@angular/core';\nimport { ExpanderComponent } from '../expander/expander.component';\n\n@Component({\n  selector: 'lk-expander-header',\n  templateUrl: './expander-header.component.html',\n  styleUrls: ['./expander-header.component.css'],\n})\nexport class ExpanderHeaderComponent implements OnInit {\n  constructor(\n    @Host() public expander: ExpanderComponent\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  doToggle() {\n    this.expander.openChange.emit(!this.expander.open);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./expander-header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "expander",
+                        "type": "ExpanderComponent",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "expander",
+                        "type": "ExpanderComponent",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button\n  expanderHeader\n  (click)=\"doToggle()\"\n  [attr.aria-expanded]=\"expander.open\"\n  [attr.aria-controls]=\"expander.ariaLabelId\"\n>\n  <ng-content></ng-content>&nbsp;\n  <span *ngIf=\"expander.open\">(open)</span>\n  <span *ngIf=\"!expander.open\">(closed)</span>\n</button>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "CoreModule",
+            "id": "module-CoreModule-da8874237a24c96a6a7316c80047f6af7a47a8f080e1f0572f0a96f4e5e49ece504444a497e29b261f9dc77488d1c9b860332c6b151adb7b8f935222ef9ab99e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/core.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponent } from './button/button.component';\nimport { ExpanderComponent } from './expander/expander.component';\nimport { ExpanderHeaderComponent } from './expander-header/expander-header.component';\nimport { ExpanderBodyComponent } from './expander-body/expander-body.component';\nimport { CommonModule } from '@angular/common';\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    ButtonComponent,\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n})\nexport class CoreModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "ExpanderBodyComponent"
+                        },
+                        {
+                            "name": "ExpanderComponent"
+                        },
+                        {
+                            "name": "ExpanderHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "ExpanderBodyComponent"
+                        },
+                        {
+                            "name": "ExpanderComponent"
+                        },
+                        {
+                            "name": "ExpanderHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "() => ({\n  template: `\n    <ljk-button>This is a test</ljk-button-base>\n  `\n})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/lukejamesk/core/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/button/button.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "() => ({\n  template: `\n    <ljk-button>This is a test</ljk-button-base>\n  `\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander-body/expander-body.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpanderBodyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander-header/expander-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpanderHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander/expander.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpanderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

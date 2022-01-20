@@ -1,0 +1,7 @@
+button {
+  @apply w-full block pt-s pb-s;
+}
+
+button:hover {
+  @apply text-primary-default;
+}

@@ -1,0 +1,9 @@
+.panel {
+  @apply
+    p-s
+    border
+    border-background-contrast-low
+    rounded-md
+    text-text-default
+    bg-background-default;
+}

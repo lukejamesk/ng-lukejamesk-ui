@@ -1,0 +1,31 @@
+h1, .h1 {
+  @apply text-3xl font-medium mb-s;
+}
+
+h2, .h2 {
+  @apply text-2xl font-medium mb-s;
+}
+
+h3, .h3 {
+  @apply text-xl font-medium mb-xs
+}
+
+p, .p {
+  @apply font-normal text-base mb-xs;
+}
+
+strong, .strong {
+  @apply font-semibold text-base mb-xs
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+p, .p,
+bold, .bold {
+  @apply block;
+
+  &:last-child {
+    @apply mb-0;
+  }
+}
