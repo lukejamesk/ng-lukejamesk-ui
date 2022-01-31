@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-92dc1edd4c1056d58793b70a41da904dd9480ba0131d900d554e9ef6e0a128da60b121f85f514092f1d9cdb045cfe53dd1ba62f648dbbe0d22979085dde9dc04",
+            "id": "component-ButtonComponent-1e58c3b78d781cb56357eccd289eca71209bc1b5a758a8b28d3da91059f960f7d8fcdf331bc32949972ce38bb7f58386e991a90ba3a3c579fd399a8c9efd430e",
             "file": "projects/lukejamesk/core/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -25,7 +25,25 @@
                 "./button.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "IconName",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ButtonVariant",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -36,27 +54,27 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ljk-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css'],\n})\nexport class ButtonComponent  {\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IconName } from '../icon/icon.component';\n\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary';\n@Component({\n  selector: 'ljk-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css'],\n})\nexport class ButtonComponent  {\n  @Input() icon?: IconName;\n  @Input() variant: ButtonVariant = 'primary';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n",
+                    "data": ".button {\n  @apply\n    py-xs\n    px-s\n    border\n    border-transparent\n    font-medium\n    flex\n    gap-xs\n    rounded-md\n}\n\n.button-primary {\n  @apply\n    bg-primary-default\n    text-primary-contrast-high\n    shadow-sm\n}\n\n.button-primary:hover {\n  @apply\n    bg-primary-contrast-low\n}\n\n.button-secondary {\n  @apply\n    border-primary-default\n    text-primary-default\n}\n\n.button-secondary:hover {\n  @apply\n    border-primary-contrast-low\n    text-primary-contrast-low\n}\n\n.button-tertiary {\n  @apply text-primary-default\n}\n\n.button-tertiary:hover {\n  @apply\n    text-primary-contrast-low\n}\n\n",
                     "styleUrl": "./button.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<button>\n  <ng-content></ng-content>\n</button>\n"
+            "templateData": "<button [class]=\"'button button-' + variant\">\n  <ljk-icon *ngIf=\"icon\" [name]=\"icon\"></ljk-icon>\n  <ng-content></ng-content>\n</button>\n"
         },
         {
             "name": "ExpanderBodyComponent",
-            "id": "component-ExpanderBodyComponent-a4773cf3be8d7691dcc12221020f8bde2c0fa5b16e71f9ecbd45a96677749cf5de1dcd8ba1687e80792d6c3cf8fae887415072e8d1ec019c3ab0313966781cce",
-            "file": "projects/lukejamesk/core/src/lib/expander-body/expander-body.component.ts",
+            "id": "component-ExpanderBodyComponent-9712d33199ff90376ead4b3c9ab5ec124d40ab9cd0a376700d8f84fd6ae532afa5c34e6c468fade0b20ed94a5643f4d3275884b2fd4c592f8a1cf3548ac578af",
+            "file": "projects/lukejamesk/core/src/lib/expander/expander-body.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lk-expander-body",
+            "selector": "ljk-expander-body",
             "styleUrls": [
                 "./expander-body.component.css"
             ],
@@ -68,18 +86,7 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -87,38 +94,27 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lk-expander-body',\n  templateUrl: './expander-body.component.html',\n  styleUrls: ['./expander-body.component.css'],\n})\nexport class ExpanderBodyComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ljk-expander-body',\n  templateUrl: './expander-body.component.html',\n  styleUrls: ['./expander-body.component.css'],\n})\nexport class ExpanderBodyComponent {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ":host {\n  @apply pt-m pb-m;\n}\n",
                     "styleUrl": "./expander-body.component.css"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<ng-content></ng-content>\n"
         },
         {
             "name": "ExpanderComponent",
-            "id": "component-ExpanderComponent-125ad98b02288843ef5a56dbecc67bacdf68d3d0bbd4d45c889232e3ce2b107a9a2fe9f18fbbaf757433084a173f8a7585e7dbdf4e15a69b250022970e3643f0",
+            "id": "component-ExpanderComponent-c13efa4d7283269e31db42ff49eea0fc466f45eba536c1385c41dc7f7e3cb5ddb5a5808c6ead6f848132118ee3a9e1b42d756ecb67154c0ccbf6b0763c54569e",
             "file": "projects/lukejamesk/core/src/lib/expander/expander.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lk-expander",
+            "selector": "ljk-expander",
             "styleUrls": [
                 "./expander.component.css"
             ],
@@ -158,18 +154,7 @@
                 }
             ],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -177,26 +162,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lk-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.css'],\n})\nexport class ExpanderComponent implements OnInit {\n  @Input() open: boolean = false;\n  @Input() id: string = '';\n  @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();\n\n  get ariaLabelId() {\n    return `Expander-${this.id}`;\n  }\n\n  constructor() {\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'ljk-expander',\n  templateUrl: './expander.component.html',\n  styleUrls: ['./expander.component.css'],\n})\nexport class ExpanderComponent {\n  @Input() open = false;\n  @Input() id = '';\n  @Output() openChange: EventEmitter<boolean> = new EventEmitter<boolean>();\n\n  get ariaLabelId() {\n    return `Expander-${this.id}`;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".ljk-expander {\n  @apply w-full block;\n}\n",
                     "styleUrl": "./expander.component.css"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 15
-            },
-            "implements": [
-                "OnInit"
-            ],
             "accessors": {
                 "ariaLabelId": {
                     "name": "ariaLabelId",
@@ -208,18 +182,18 @@
                     }
                 }
             },
-            "templateData": "<div>\n  <ng-content select=\"lk-expander-header\"></ng-content>\n  <div [attr.aria-labelledby]=\"ariaLabelId\">\n    <ng-content *ngIf=\"open\"></ng-content>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"ljk-expander\">\n  <ng-content select=\"ljk-expander-header\"></ng-content>\n  <div [attr.aria-labelledby]=\"ariaLabelId\">\n    <ng-content *ngIf=\"open\"></ng-content>\n  </div>\n</div>\n"
         },
         {
             "name": "ExpanderHeaderComponent",
-            "id": "component-ExpanderHeaderComponent-7cf52d2e8efadf1578ea2d5eb301aa98fc081984814d908d0b7be76d9aa94f108aa9a6653c491c8ab06a2088644907f32a14364fee10de895ce43873d052e082",
-            "file": "projects/lukejamesk/core/src/lib/expander-header/expander-header.component.ts",
+            "id": "component-ExpanderHeaderComponent-def7257fad63e150e34fa7a72b69e5c2b6536cf0bfd5d2c689aa66449485daa7e81423c5c4939d8913ef19f9b1bf14d7b0369fd6a99dbe595f4b42954784e9c5",
+            "file": "projects/lukejamesk/core/src/lib/expander/expander-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lk-expander-header",
+            "selector": "ljk-expander-header",
             "styleUrls": [
                 "./expander-header.component.css"
             ],
@@ -257,17 +231,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -279,11 +243,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Host, OnInit } from '@angular/core';\nimport { ExpanderComponent } from '../expander/expander.component';\n\n@Component({\n  selector: 'lk-expander-header',\n  templateUrl: './expander-header.component.html',\n  styleUrls: ['./expander-header.component.css'],\n})\nexport class ExpanderHeaderComponent implements OnInit {\n  constructor(\n    @Host() public expander: ExpanderComponent\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  doToggle() {\n    this.expander.openChange.emit(!this.expander.open);\n  }\n}\n",
+            "sourceCode": "import { Component, Host } from '@angular/core';\nimport { ExpanderComponent } from '../expander/expander.component';\n\n@Component({\n  selector: 'ljk-expander-header',\n  templateUrl: './expander-header.component.html',\n  styleUrls: ['./expander-header.component.css'],\n})\nexport class ExpanderHeaderComponent {\n  constructor(\n    @Host() public expander: ExpanderComponent\n  ) { }\n  doToggle() {\n    this.expander.openChange.emit(!this.expander.open);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "button {\n  @apply\n    w-full\n    block\n    pt-s\n    pb-s\n    text-left\n    rounded-md;\n}\n\nbutton:hover {\n  @apply bg-background-contrast-vlow;\n}\n\nbutton:hover {\n  @apply text-primary-default;\n}\n\n.open-indicator {\n  @apply ml-s;\n}\n",
                     "styleUrl": "./expander-header.component.css"
                 }
             ],
@@ -314,22 +278,303 @@
                     }
                 ]
             },
-            "implements": [
-                "OnInit"
+            "templateData": "<button\n  expanderHeader\n  (click)=\"doToggle()\"\n  [attr.aria-expanded]=\"expander.open\"\n  [attr.aria-controls]=\"expander.ariaLabelId\"\n>\n  <div class=\"h3\">\n    <span>\n      <ng-content></ng-content>\n    </span>\n    <ljk-icon class=\"open-indicator\" [name]=\"expander.open ? 'chevron-up' : 'chevron-down'\"></ljk-icon>\n  </div>\n</button>\n"
+        },
+        {
+            "name": "GridColComponent",
+            "id": "component-GridColComponent-d831469ee3f97b8c154fd79dc5961f931256c4fb0c330281f04a686324c2f79ef7ca6531b2b7df7e38d44365ded6794f092db0ffb4e474c8bdf95b4a0d17aa0a",
+            "file": "projects/lukejamesk/core/src/lib/grid/grid-col.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-grid-col",
+            "styleUrls": [
+                "./grid-col.component.scss"
             ],
-            "templateData": "<button\n  expanderHeader\n  (click)=\"doToggle()\"\n  [attr.aria-expanded]=\"expander.open\"\n  [attr.aria-controls]=\"expander.ariaLabelId\"\n>\n  <ng-content></ng-content>&nbsp;\n  <span *ngIf=\"expander.open\">(open)</span>\n  <span *ngIf=\"!expander.open\">(closed)</span>\n</button>\n"
+            "styles": [],
+            "templateUrl": [
+                "./grid-col.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "span",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ColumnSpan",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, Input } from '@angular/core';\n\ntype ColumnSpan = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\n  '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';\n\n@Component({\n  selector: 'ljk-grid-col',\n  templateUrl: './grid-col.component.html',\n  styleUrls: ['./grid-col.component.scss']\n})\nexport class GridColComponent {\n  @Input() public span: ColumnSpan = 1\n\n  @HostBinding('class') get hostClasses() {\n    return `span-${this.span}`;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  @apply text-left;\n\n  &.span-1 {\n    @apply col-span-1;\n  }\n  &.span-2 {\n    @apply col-span-2;\n  }\n  &.span-3 {\n    @apply col-span-3;\n  }\n  &.span-4 {\n    @apply col-span-4;\n  }\n  &.span-5 {\n    @apply col-span-5;\n  }\n  &.span-6 {\n    @apply col-span-6;\n  }\n  &.span-7 {\n    @apply col-span-7;\n  }\n  &.span-8 {\n    @apply col-span-8;\n  }\n  &.span-9 {\n    @apply col-span-9;\n  }\n  &.span-10 {\n    @apply col-span-10;\n  }\n  &.span-11 {\n    @apply col-span-11;\n  }\n  &.span-12 {\n    @apply col-span-12;\n  }\n}\n",
+                    "styleUrl": "./grid-col.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "hostClasses": {
+                    "name": "hostClasses",
+                    "getSignature": {
+                        "name": "hostClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 14
+                    }
+                }
+            },
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "GridComponent",
+            "id": "component-GridComponent-484e9f659f499ed9d648f166244374ee99fc76ac0beb0dab5eafb2b62c503c39f99080102b63b2b7bcf53374cdc89f1e7e3caef36cca4c6cf10fe89ca5d6afab",
+            "file": "projects/lukejamesk/core/src/lib/grid/grid.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-grid",
+            "styleUrls": [
+                "./grid.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./grid.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ljk-grid',\n  templateUrl: './grid.component.html',\n  styleUrls: ['./grid.component.css']\n})\nexport class GridComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  @apply grid grid-cols-12 gap-l;\n}\n",
+                    "styleUrl": "./grid.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "IconComponent",
+            "id": "component-IconComponent-318e30dcab57d6b6112be0c30d4679c535e024f9b10afc69a13b89aaeb979a6c1d99eba1afda8df146e8eeb6992251206b0ff4825b537caa0aaec0fe923f70d9",
+            "file": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-icon",
+            "styleUrls": [
+                "./icon.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "IconName",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'auto'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "IconSize",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { FaIconLibrary } from '@fortawesome/angular-fontawesome';\nimport { fas, IconName as fasIconName } from '@fortawesome/free-solid-svg-icons';\n\nexport type IconSize = 'auto' | 's' | 'm' |'l';\nexport type IconName = fasIconName;\n\n@Component({\n  selector: 'ljk-icon',\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.css']\n})\nexport class IconComponent {\n  @Input() name: IconName\n  @Input() size: IconSize = 'auto'\n\n  constructor(\n    library: FaIconLibrary\n  ) {\n    library.addIconPacks(fas)\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".ljk-icon {\n  display: inline-block;\n}\n\n.size-s {\n  @apply text-sm leading-none\n}\n\n.size-m {\n  @apply text-base leading-none\n}\n\n.size-l {\n  @apply text-lg leading-none\n}\n",
+                    "styleUrl": "./icon.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "FaIconLibrary",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "library",
+                        "type": "FaIconLibrary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<span [class]=\"'ljk-icon size-' + size\">\n  <fa-icon [icon]=\"name\" ></fa-icon>\n</span>\n"
+        },
+        {
+            "name": "PanelComponent",
+            "id": "component-PanelComponent-120a4c6dd83207cd64960ff03129f14d9d0b3643e00e6eef60fb1cc776bf40b9c0d0134d7b1b1274c2720fea1790f6300dc178db638ed0253f5ecda5ce393a25",
+            "file": "projects/lukejamesk/core/src/lib/panel/panel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-panel",
+            "styleUrls": [
+                "./panel.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./panel.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ljk-panel',\n  templateUrl: './panel.component.html',\n  styleUrls: ['./panel.component.css']\n})\nexport class PanelComponent {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".panel {\n  @apply\n    p-s\n    border\n    border-background-contrast-low\n    rounded-md\n    text-text-default\n    bg-background-default;\n}\n",
+                    "styleUrl": "./panel.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"panel\">\n  <ng-content>\n\n  </ng-content>\n</div>\n"
+        },
+        {
+            "name": "ThemeComponent",
+            "id": "component-ThemeComponent-519f49f74f365db9c7f92638d2edb944d51cd11b80d23e9b4f86b37f5c5d9014e1ac0bc4c39e1ca265ad8b849250ebfafb53c1419efcd92c0b3d7f84d06fa18d",
+            "file": "projects/lukejamesk/core/src/lib/theme/theme.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ljk-theme",
+            "styleUrls": [
+                "./theme.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./theme.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "theme",
+                    "defaultValue": "'light'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Theme",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport type Theme = 'light' | 'dark';\n\n@Component({\n  selector: 'ljk-theme',\n  templateUrl: './theme.component.html',\n  styleUrls: ['./theme.component.css']\n})\nexport class ThemeComponent {\n  @Input() public theme: Theme = 'light';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": " .theme-light {\n  --bg: var(--white);\n  --bg-high-contrast: var(--black);\n  --bg-low-contrast: var(--gray-300);\n  --bg-very-low-contrast: var(--gray-100);\n\n  --text: var(--gray-800);\n\n  --primary: var(--brand);\n  --primary-high-contrast: var(--white);\n  --primary-low-contrast: var(--brand-light);\n}\n\n.theme-dark {\n  --bg: var(--black);\n  --bg-high-contrast: var(--black);\n  --bg-low-contrast: var(--gray-600);\n\n  --text: var(--gray-200);\n\n  --primary: var(--brand);\n  --primary-high-contrast: var(--white);\n  --primary-low-contrast: var(--brand-light);\n}\n",
+                    "styleUrl": "./theme.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div [attr.class]=\"'theme-'+theme\">\n  <ng-content></ng-content>\n</div>\n"
         }
     ],
     "modules": [
         {
-            "name": "CoreModule",
-            "id": "module-CoreModule-da8874237a24c96a6a7316c80047f6af7a47a8f080e1f0572f0a96f4e5e49ece504444a497e29b261f9dc77488d1c9b860332c6b151adb7b8f935222ef9ab99e",
+            "name": "ButtonModule",
+            "id": "module-ButtonModule-8111d5cac3e14ec60e6d126eefee59f0955aef6ed7dab8af17cfacfe4117eabefd057a4bcb8fd58a447ab213db8756f912d1a8bb6898f15249cff34263e9bcd1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/lukejamesk/core/src/lib/core.module.ts",
+            "file": "projects/lukejamesk/core/src/lib/button/button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponent } from './button/button.component';\nimport { ExpanderComponent } from './expander/expander.component';\nimport { ExpanderHeaderComponent } from './expander-header/expander-header.component';\nimport { ExpanderBodyComponent } from './expander-body/expander-body.component';\nimport { CommonModule } from '@angular/common';\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    ButtonComponent,\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n})\nexport class CoreModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\nimport { IconModule } from '../icon/icon.module';\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n  ],\n  imports: [\n    CommonModule,\n    IconModule,\n  ],\n  exports: [\n    ButtonComponent,\n  ],\n})\nexport class ButtonModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -340,7 +585,107 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CoreModule",
+            "id": "module-CoreModule-c5054c9dab841a3f57b2ddcf70952904f88eb378e67a3cf5a05a7f1abfa8f38208349f20d07b5a703071ffd4cec9a2f428bf83c8e22641cf742eab3bae466ad6",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/core.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ExpanderModule } from './expander/expander.module';\nimport { GridModule } from './grid/grid.module';\nimport { PanelModule } from './panel/panel.module';\nimport { ButtonModule } from './button/button.module';\nimport { ThemeModule } from './theme/theme.module';\nimport { IconModule } from './icon/icon.module';\n\n@NgModule({\n  declarations: [\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    ButtonModule,\n    ExpanderModule,\n    GridModule,\n    IconModule,\n    PanelModule,\n    ThemeModule\n  ],\n})\nexport class CoreModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
                         },
+                        {
+                            "name": "ExpanderModule"
+                        },
+                        {
+                            "name": "GridModule"
+                        },
+                        {
+                            "name": "IconModule"
+                        },
+                        {
+                            "name": "PanelModule"
+                        },
+                        {
+                            "name": "ThemeModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ExpanderModule",
+            "id": "module-ExpanderModule-ba0d793d7e27498fcc120c5aba96a0fbfdea2cda3e303c5580272b9ddde39154a0893ceec8827f7bc6dccce77210a3185501ecdd7a3596f8730741a762b6c959",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/expander/expander.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ExpanderComponent } from './expander.component';\nimport { ExpanderHeaderComponent } from './expander-header.component';\nimport { ExpanderBodyComponent } from './expander-body.component';\nimport { GridModule } from '../grid/grid.module';\nimport { IconModule } from '../icon/icon.module';\n\n@NgModule({\n  declarations: [\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n  imports: [\n    CommonModule,\n    GridModule,\n    IconModule,\n  ],\n  exports: [\n    ExpanderComponent,\n    ExpanderHeaderComponent,\n    ExpanderBodyComponent,\n  ],\n})\nexport class ExpanderModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "ExpanderBodyComponent"
                         },
@@ -354,14 +699,18 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "GridModule"
+                        },
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
                     "elements": [
-                        {
-                            "name": "ButtonComponent"
-                        },
                         {
                             "name": "ExpanderBodyComponent"
                         },
@@ -370,6 +719,188 @@
                         },
                         {
                             "name": "ExpanderHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "GridModule",
+            "id": "module-GridModule-0eb2bee082ce6d8b732a50070d95275fc3d90f3ef9fb735b21716cd79844d629ebb88a1e5e3e8f204750522dedd2af8e1ff26dba336b463333b99302262afbac",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/grid/grid.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { GridComponent } from './grid.component';\nimport { GridColComponent } from './grid-col.component';\n\n@NgModule({\n  declarations: [\n    GridComponent,\n    GridColComponent,\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    GridComponent,\n    GridColComponent,\n  ],\n})\nexport class GridModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "GridColComponent"
+                        },
+                        {
+                            "name": "GridComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "GridColComponent"
+                        },
+                        {
+                            "name": "GridComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "IconModule",
+            "id": "module-IconModule-48743403aa228d78ef3bb0a7838ae4de80136e32a5e3e38663475d0af8624a0386bd34b2ecd694396db9d9a7f699a5d85b5cb4b355b2b7f75aa2383d31040eb2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/icon/icon.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { IconComponent } from './icon.component';\n\n@NgModule({\n  declarations: [\n    IconComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n  ],\n  exports: [\n    IconComponent,\n  ],\n})\nexport class IconModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "IconComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "IconComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "PanelModule",
+            "id": "module-PanelModule-b59d70348192c1187508f3c0ec0fcb9deda2dcf41e283a3d494018f00d7f36f97159b90047712068eeecea5679c0618679cd7346268b6cd3d634af06cea5b111",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/panel/panel.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { PanelComponent } from './panel.component';\n\n@NgModule({\n  declarations: [\n    PanelComponent,\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    PanelComponent,\n  ],\n})\nexport class PanelModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "PanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "PanelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ThemeModule",
+            "id": "module-ThemeModule-805a102cf78dfe4f518a3fe62939b836503b467d4a4c89e111634cc0927e00111aceb3836a535e132d8d534d7200c66780f000a8802e7ef6bd5a2d9de8620109",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/lukejamesk/core/src/lib/theme/theme.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ThemeComponent } from './theme.component';\n\n@NgModule({\n  declarations: [\n    ThemeComponent,\n  ],\n  imports: [\n    CommonModule,\n  ],\n  exports: [\n    ThemeComponent,\n  ],\n})\nexport class ThemeModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ThemeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ThemeComponent"
                         }
                     ]
                 },
@@ -397,14 +928,74 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "() => ({\n  template: `\n    <ljk-button>This is a test</ljk-button-base>\n  `\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "require",
@@ -414,10 +1005,166 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "() => ({\n  template: `\n    <ljk-theme [theme]=\"theme\">\n    <h1>This is a heading 1</h1>\n    <h2>This is a heading 2</h2>\n    <h3>This is a heading 3</h3>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<literal type>",
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme>\n      <ljk-button\n        [icon]=\"icon\"\n        [variant]=\"variant\"\n      >\n        This is a test\n      </ljk-button>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme [theme]=\"theme\">\n      <ljk-expander id=\"TestExpander\" [(open)]=\"open\">\n        <ljk-expander-header>\n          The title\n        </ljk-expander-header>\n        <ljk-expander-body>\n          This is my content\n        </ljk-expander-body>\n      </ljk-expander>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<literal type>",
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme>\n      <ljk-icon [name]=\"name\" [size]=\"size\"></ljk-icon>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme>\n      <ljk-grid>\n        <ljk-grid-col span=\"6\">\n          <ljk-panel>\n            Test item 1\n          </ljk-panel>\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          Test item 2\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          Test item 3\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          <ljk-panel>\n            Test item 1\n          </ljk-panel>\n        </ljk-grid-col>\n        <ljk-grid-col span=\"9\">\n          <ljk-theme theme=\"dark\">\n            <ljk-panel>\n              <ljk-grid>\n                <ljk-grid-col span=\"6\">\n                  <ljk-panel>\n                    Test item 1\n                  </ljk-panel>\n                </ljk-grid-col>\n                <ljk-grid-col span=\"6\">\n                  <ljk-panel>\n                    Test item 1\n                    <ljk-icon name=\"coffee\"></ljk-icon>\n                  </ljk-panel>\n                </ljk-grid-col>\n              </ljk-grid>\n            </ljk-panel>\n          </ljk-theme>\n        </ljk-grid-col>\n      </ljk-grid>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<literal type>",
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme [theme]=\"theme\">\n      <ljk-panel>\n        <h2>Faq</h2>\n        <ljk-expander [(open)]=\"q1\">\n          <ljk-expander-header>Question 1</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n        <ljk-expander [(open)]=\"q2\">\n          <ljk-expander-header>Question 2</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n        <ljk-expander [(open)]=\"q3\">\n          <ljk-expander-header>Question 3</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n      </ljk-panel>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme theme=\"light\">\n      <ljk-panel>\n        <ljk-grid>\n          <ljk-grid-col span=\"12\">\n            <h3>This is my content</h3>\n            <ljk-button>Action 1</ljk-button>\n          </ljk-grid-col>\n          <ljk-grid-col span=\"12\">\n            <ljk-theme theme=\"dark\">\n              <ljk-panel>\n                <p>And a dark theme content theme</p>\n                <ljk-button>Action 2</ljk-button>\n              </ljk-panel>\n            </ljk-theme>\n          </ljk-grid-col>\n        </ljk-grid>\n      </ljk-panel>\n    </ljk-theme>\n  `\n})"
+            },
+            {
+                "name": "Tertiary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "ButtonVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"tertiary\"",
+                "file": "projects/lukejamesk/core/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "ColumnSpan",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\"",
+                "file": "projects/lukejamesk/core/src/lib/grid/grid-col.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "IconName",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "fasIconName",
+                "file": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "IconSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"auto\" | \"s\" | \"m\" | \"l\"",
+                "file": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "Theme",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"light\" | \"dark\"",
+                "file": "projects/lukejamesk/core/src/lib/theme/theme.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "projects/lukejamesk/core/src/test.ts": [
@@ -441,6 +1188,72 @@
                     "type": "literal type"
                 }
             ],
+            "projects/lukejamesk/core/src/lib/typography.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "() => ({\n  template: `\n    <ljk-theme [theme]=\"theme\">\n    <h1>This is a heading 1</h1>\n    <h2>This is a heading 2</h2>\n    <h3>This is a heading 3</h3>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>\n    </ljk-theme>\n  `\n})"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/icon/icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<literal type>",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme>\n      <ljk-icon [name]=\"name\" [size]=\"size\"></ljk-icon>\n    </ljk-theme>\n  `\n})"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/panel/panel.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<literal type>",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme [theme]=\"theme\">\n      <ljk-panel>\n        <h2>Faq</h2>\n        <ljk-expander [(open)]=\"q1\">\n          <ljk-expander-header>Question 1</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n        <ljk-expander [(open)]=\"q2\">\n          <ljk-expander-header>Question 2</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n        <ljk-expander [(open)]=\"q3\">\n          <ljk-expander-header>Question 3</ljk-expander-header>\n          <ljk-expander-body>My Answer</ljk-expander-body>\n        </ljk-expander>\n      </ljk-panel>\n    </ljk-theme>\n  `\n})"
+                }
+            ],
             "projects/lukejamesk/core/src/lib/button/button.stories.ts": [
                 {
                     "name": "Primary",
@@ -449,14 +1262,184 @@
                     "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<literal type>",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <ljk-theme>\n      <ljk-button\n        [icon]=\"icon\"\n        [variant]=\"variant\"\n      >\n        This is a test\n      </ljk-button>\n    </ljk-theme>\n  `\n})"
+                },
+                {
+                    "name": "Tertiary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/expander/expander.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "() => ({\n  template: `\n    <ljk-button>This is a test</ljk-button-base>\n  `\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme [theme]=\"theme\">\n      <ljk-expander id=\"TestExpander\" [(open)]=\"open\">\n        <ljk-expander-header>\n          The title\n        </ljk-expander-header>\n        <ljk-expander-body>\n          This is my content\n        </ljk-expander-body>\n      </ljk-expander>\n    </ljk-theme>\n  `\n})"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/grid/grid.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme>\n      <ljk-grid>\n        <ljk-grid-col span=\"6\">\n          <ljk-panel>\n            Test item 1\n          </ljk-panel>\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          Test item 2\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          Test item 3\n        </ljk-grid-col>\n        <ljk-grid-col span=\"3\">\n          <ljk-panel>\n            Test item 1\n          </ljk-panel>\n        </ljk-grid-col>\n        <ljk-grid-col span=\"9\">\n          <ljk-theme theme=\"dark\">\n            <ljk-panel>\n              <ljk-grid>\n                <ljk-grid-col span=\"6\">\n                  <ljk-panel>\n                    Test item 1\n                  </ljk-panel>\n                </ljk-grid-col>\n                <ljk-grid-col span=\"6\">\n                  <ljk-panel>\n                    Test item 1\n                    <ljk-icon name=\"coffee\"></ljk-icon>\n                  </ljk-panel>\n                </ljk-grid-col>\n              </ljk-grid>\n            </ljk-panel>\n          </ljk-theme>\n        </ljk-grid-col>\n      </ljk-grid>\n    </ljk-theme>\n  `\n})"
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/theme/theme.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n  template:`\n    <ljk-theme theme=\"light\">\n      <ljk-panel>\n        <ljk-grid>\n          <ljk-grid-col span=\"12\">\n            <h3>This is my content</h3>\n            <ljk-button>Action 1</ljk-button>\n          </ljk-grid-col>\n          <ljk-grid-col span=\"12\">\n            <ljk-theme theme=\"dark\">\n              <ljk-panel>\n                <p>And a dark theme content theme</p>\n                <ljk-button>Action 2</ljk-button>\n              </ljk-panel>\n            </ljk-theme>\n          </ljk-grid-col>\n        </ljk-grid>\n      </ljk-panel>\n    </ljk-theme>\n  `\n})"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "projects/lukejamesk/core/src/lib/button/button.component.ts": [
+                {
+                    "name": "ButtonVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"tertiary\"",
+                    "file": "projects/lukejamesk/core/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/grid/grid-col.component.ts": [
+                {
+                    "name": "ColumnSpan",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\"",
+                    "file": "projects/lukejamesk/core/src/lib/grid/grid-col.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/icon/icon.component.ts": [
+                {
+                    "name": "IconName",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "fasIconName",
+                    "file": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                },
+                {
+                    "name": "IconSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"auto\" | \"s\" | \"m\" | \"l\"",
+                    "file": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "projects/lukejamesk/core/src/lib/theme/theme.component.ts": [
+                {
+                    "name": "Theme",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"light\" | \"dark\"",
+                    "file": "projects/lukejamesk/core/src/lib/theme/theme.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
@@ -469,7 +1452,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -483,21 +1466,61 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/lukejamesk/core/src/lib/expander-body/expander-body.component.ts",
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander/expander-body.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ExpanderBodyComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/lukejamesk/core/src/lib/expander-header/expander-header.component.ts",
+                "filePath": "projects/lukejamesk/core/src/lib/expander/expander-header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ExpanderHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -506,7 +1529,172 @@
                 "linktype": "component",
                 "name": "ExpanderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/expander/expander.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/grid/grid-col.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GridColComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/grid/grid.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GridComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/grid/grid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/panel/panel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PanelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/panel/panel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/theme/theme.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ThemeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/theme/theme.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/lukejamesk/core/src/lib/typography.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

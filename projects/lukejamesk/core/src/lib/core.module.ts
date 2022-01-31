@@ -5,6 +5,7 @@ import { GridModule } from './grid/grid.module';
 import { PanelModule } from './panel/panel.module';
 import { ButtonModule } from './button/button.module';
 import { ThemeModule } from './theme/theme.module';
+import { IconModule } from './icon/icon.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ThemeModule } from './theme/theme.module';
     ButtonModule,
     ExpanderModule,
     GridModule,
+    IconModule,
     PanelModule,
     ThemeModule
   ],

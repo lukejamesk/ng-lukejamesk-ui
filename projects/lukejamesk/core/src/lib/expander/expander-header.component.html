@@ -4,17 +4,10 @@
   [attr.aria-expanded]="expander.open"
   [attr.aria-controls]="expander.ariaLabelId"
 >
-  <ljk-grid>
-    <ljk-grid-col [span]="10">
-      <div class="h3">
-        <ng-content></ng-content>
-      </div>
-    </ljk-grid-col>
-    <ljk-grid-col [span]="2">
-      <div class="text-right">
-        <span *ngIf="expander.open">(open)</span>
-        <span *ngIf="!expander.open">(closed)</span>
-      </div>
-    </ljk-grid-col>
-  </ljk-grid>
+  <div class="h3">
+    <span>
+      <ng-content></ng-content>
+    </span>
+    <ljk-icon class="open-indicator" [name]="expander.open ? 'chevron-up' : 'chevron-down'"></ljk-icon>
+  </div>
 </button>

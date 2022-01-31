@@ -1,0 +1,15 @@
+.ljk-icon {
+  display: inline-block;
+}
+
+.size-s {
+  @apply text-sm leading-none
+}
+
+.size-m {
+  @apply text-base leading-none
+}
+
+.size-l {
+  @apply text-lg leading-none
+}

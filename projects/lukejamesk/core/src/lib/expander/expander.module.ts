@@ -4,6 +4,7 @@ import { ExpanderComponent } from './expander.component';
 import { ExpanderHeaderComponent } from './expander-header.component';
 import { ExpanderBodyComponent } from './expander-body.component';
 import { GridModule } from '../grid/grid.module';
+import { IconModule } from '../icon/icon.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { GridModule } from '../grid/grid.module';
   imports: [
     CommonModule,
     GridModule,
+    IconModule,
   ],
   exports: [
     ExpanderComponent,
