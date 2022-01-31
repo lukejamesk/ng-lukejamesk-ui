@@ -1,4 +1,4 @@
- .theme-light {
+.theme-light {
   --bg: var(--white);
   --bg-high-contrast: var(--black);
   --bg-low-contrast: var(--gray-300);
@@ -6,19 +6,48 @@
 
   --text: var(--gray-800);
 
-  --primary: var(--brand);
+  --primary: var(--brand-day);
   --primary-high-contrast: var(--white);
-  --primary-low-contrast: var(--brand-light);
+  --primary-low-contrast: var(--brand-day-light);
+}
+
+:host-context(.theme-light) .theme-plate-1 {
+  --bg: var(--gray-100);
+  --bg-high-contrast: var(--black);
+  --bg-low-contrast: var(--gray-400);
+  --bg-very-low-contrast: var(--gray-200);
+}
+
+:host-context(.theme-light) .theme-plate-2 {
+  --bg: var(--gray-200);
+  --bg-high-contrast: var(--black);
+  --bg-low-contrast: var(--gray-500);
+  --bg-very-low-contrast: var(--gray-300);
 }
 
 .theme-dark {
   --bg: var(--black);
   --bg-high-contrast: var(--black);
   --bg-low-contrast: var(--gray-600);
+  --bg-very-low-contrast: var(--gray-900);
 
   --text: var(--gray-200);
 
-  --primary: var(--brand);
+  --primary: var(--brand-night);
   --primary-high-contrast: var(--white);
-  --primary-low-contrast: var(--brand-light);
+  --primary-low-contrast: var(--brand-night-light);
+}
+
+:host-context(.theme-dark) .theme-plate-1 {
+  --bg: var(--gray-900);
+  --bg-high-contrast: var(--black);
+  --bg-low-contrast: var(--gray-500);
+  --bg-very-low-contrast: var(--gray-800);
+}
+
+:host-context(.theme-dark) .theme-plate-2 {
+  --bg: var(--gray-800);
+  --bg-high-contrast: var(--black);
+  --bg-low-contrast: var(--gray-400);
+  --bg-very-low-contrast: var(--gray-700);
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'plate-1' | 'plate-2';
 
 @Component({
   selector: 'ljk-theme',
