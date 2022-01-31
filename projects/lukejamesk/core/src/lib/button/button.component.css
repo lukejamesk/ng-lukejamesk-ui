@@ -4,12 +4,42 @@
     px-s
     border
     border-transparent
-    shadow-sm
     font-medium
-    text-primary-contrast-high
-    bg-primary-default;
+    flex
+    gap-xs
+    rounded-md
 }
 
-.button:hover {
-  @apply bg-primary-contrast-low;
+.button-primary {
+  @apply
+    bg-primary-default
+    text-primary-contrast-high
+    shadow-sm
 }
+
+.button-primary:hover {
+  @apply
+    bg-primary-contrast-low
+}
+
+.button-secondary {
+  @apply
+    border-primary-default
+    text-primary-default
+}
+
+.button-secondary:hover {
+  @apply
+    border-primary-contrast-low
+    text-primary-contrast-low
+}
+
+.button-tertiary {
+  @apply text-primary-default
+}
+
+.button-tertiary:hover {
+  @apply
+    text-primary-contrast-low
+}
+

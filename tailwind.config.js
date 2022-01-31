@@ -15,6 +15,7 @@ module.exports = {
       background: {
         default: 'var(--bg)',
         contrast: {
+          vlow: 'var(--bg-very-low-contrast)',
           low: 'var(--bg-low-contrast)',
           high: 'var(--bg-high-contrast)',
         }

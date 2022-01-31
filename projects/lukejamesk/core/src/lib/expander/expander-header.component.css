@@ -1,7 +1,17 @@
 button {
-  @apply w-full block pt-s pb-s;
+  @apply
+    w-full
+    block
+    pt-s
+    pb-s
+    text-left
+    rounded-md;
 }
 
 button:hover {
   @apply text-primary-default;
+}
+
+.open-indicator {
+  @apply ml-s;
 }
