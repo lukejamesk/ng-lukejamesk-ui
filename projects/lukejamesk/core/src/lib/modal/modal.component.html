@@ -1,0 +1,10 @@
+<ng-template #modalTemplate>
+  <ljk-theme theme="light">
+    <div class="ljk-modal" *ngIf="open">
+      <div class="ljk-curtain" (click)="close()"></div>
+      <div class="ljk-modal-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </ljk-theme>
+</ng-template>
