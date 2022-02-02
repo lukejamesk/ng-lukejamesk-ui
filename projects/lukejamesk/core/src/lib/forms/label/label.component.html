@@ -1,0 +1,8 @@
+<label [attr.for]="for">
+  <span>
+    <ng-content></ng-content>
+    <span class="required" *ngIf="required">
+      *
+    </span>
+  </span>
+</label>

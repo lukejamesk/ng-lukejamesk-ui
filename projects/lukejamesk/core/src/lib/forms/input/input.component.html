@@ -1,0 +1,18 @@
+<div
+  class="form-control"
+  [class.is-focused]="isFocused"
+  [class.has-value]="hasValue"
+>
+  <ljk-label class="label" [for]="id" [required]="required">
+    {{label}}
+  </ljk-label>
+  <input
+    [id]="id"
+    [name]="name"
+    type="text"
+    [(ngModel)]="value"
+    (ngModelChange)="updateChanges()"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+  />
+</div>

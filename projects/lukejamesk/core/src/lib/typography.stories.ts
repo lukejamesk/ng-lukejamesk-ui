@@ -14,13 +14,13 @@ export default {
 const Template: Story = () => ({
   template: `
     <ljk-theme [theme]="theme">
-    <h1>This is a heading 1</h1>
-    <h2>This is a heading 2</h2>
-    <h3>This is a heading 3</h3>
-    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
-    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
-    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
-    <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
+      <h1>This is a heading 1</h1>
+      <h2>This is a heading 2</h2>
+      <h3>This is a heading 3</h3>
+      <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
+      <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
+      <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
+      <p>This is a paragraphy with some <strong>bolded</strong> text.</p>
     </ljk-theme>
   `
 });

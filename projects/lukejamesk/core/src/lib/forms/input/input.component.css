@@ -1,0 +1,31 @@
+.form-control {
+  @apply relative mt-l;
+}
+
+.form-control input {
+  @apply
+    pb-xs
+    pt-xs
+    border-b-2
+    border-y-background-contrast-low
+    w-full
+    outline-none
+    bg-transparent
+    transition-all
+    duration-200
+    ease-out
+}
+
+.form-control.is-focused input {
+  @apply
+    border-y-primary-default
+}
+
+.form-control .label {
+  @apply absolute origin-left top-2/4 -translate-y-2/4 transition-all duration-200 ease-out pointer-events-none;
+}
+
+.form-control.is-focused .label,
+.form-control.has-value .label {
+  @apply top-0 -translate-y-2/4 scale-75 left-0 ;
+}

@@ -7,6 +7,7 @@ import { ButtonModule } from './button/button.module';
 import { ThemeModule } from './theme/theme.module';
 import { IconModule } from './icon/icon.module';
 import { ModalModule } from './modal/modal.module';
+import { FormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ModalModule } from './modal/modal.module';
   exports: [
     ButtonModule,
     ExpanderModule,
+    FormsModule,
     GridModule,
     IconModule,
     ModalModule,
