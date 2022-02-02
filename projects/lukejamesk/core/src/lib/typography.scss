@@ -25,6 +25,8 @@ p, .p,
 bold, .bold {
   @apply block;
 
+  color: var(--text);
+
   &:last-child {
     @apply mb-0;
   }

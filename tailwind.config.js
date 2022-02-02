@@ -12,6 +12,7 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
+      black: 'var(--black)',
       background: {
         default: 'var(--bg)',
         contrast: {
